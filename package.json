@@ -25,6 +25,7 @@
   },
   "scripts": {
     "dev": "webpack -d --watch",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "test": "mocha --compilers js:babel-register --recursive"
   }
 }
