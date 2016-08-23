@@ -4,7 +4,9 @@
   "description": "redux_todos",
   "main": "src/index.jsx",
   "scripts": {
-    "test": "npm test"
+    "dev": "webpack -d --watch",
+    "build": "webpack -p",
+    "test": "mocha --compilers js:babel-register --recursive"
   },
   "keywords": [
     "redux",
@@ -17,15 +19,11 @@
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
     "eslint": "^3.3.1",
+    "mocha": "^3.0.2",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "webpack": "^1.13.2"
-  },
-  "scripts": {
-    "dev": "webpack -d --watch",
-    "build": "webpack -p",
-    "test": "mocha --compilers js:babel-register --recursive"
   }
 }
