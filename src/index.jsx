@@ -1,20 +1,35 @@
-import todoApp from './reducers.js';
+import React from 'react';
+import { render } from 'react-dom';
 import { createStore } from 'redux';
-
-import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from './actions.js';
+import { Provider } from 'react-redux';
+import App from './containers/App';
+import todoApp from './model/reducers';
 
 let store = createStore(todoApp);
 
-console.log(store.getState());
+let rootElement = document.getElementById('root');
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
+);
 
-store.dispatch(addTodo("Hello Todo"));
 
-console.log(store.getState());
+// import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from './actions.js';
 
-store.dispatch(toggleTodo(0));
+// let store = createStore(todoApp);
 
-console.log(store.getState());
+// console.log(store.getState());
 
-store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_ACTIVE));
+// store.dispatch(addTodo("Hello Todo"));
 
-console.log(store.getState());
+// console.log(store.getState());
+
+// store.dispatch(toggleTodo(0));
+
+// console.log(store.getState());
+
+// store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_ACTIVE));
+
+// console.log(store.getState());

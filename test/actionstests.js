@@ -1,5 +1,5 @@
 import expect from 'expect';
-import * as actions from '../src/actions.js';
+import * as actions from '../src/model/actions.js';
 
 describe('actions', () => {
   it('should create an action to add a todo', () => {
